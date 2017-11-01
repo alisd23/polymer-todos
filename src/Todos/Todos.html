@@ -1,0 +1,34 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<link rel="import" href="../shared.style.html">
+<link rel="import" href="./Todos.style.html">
+
+<link rel="import" href="./Form/Form.html">
+<link rel="import" href="./TodoItem/TodoItem.html">
+
+<dom-module id="todos-component">
+  <template>
+    <style include="shared-styles"></style>
+    <style include="todos-styles"></style>
+
+    <h1>Todos</h1>
+    <form-component
+      on-submit="_addTodo"
+      fields="[[formFields]]"
+      submit-text="Add Todo">
+    </form-component>
+
+    <div class="todo-list">
+      <template is="dom-repeat" items="[[todos]]">
+        <todo-item-component
+          text="[[item.text]]"
+          notes="[[item.notes]]"
+          completed="[[item.completed]]"
+          on-update="_updateTodo">
+        </todo-item-component>
+      </template>
+    </div>
+  </template>
+
+  <script src="./Todos.js"></script>
+</dom-module>

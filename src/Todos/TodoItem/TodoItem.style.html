@@ -1,0 +1,32 @@
+<dom-module id="todo-item-styles">
+  <template>
+    <style>
+      .todo-item {
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: -1px 1px 10px 0 rgba(0, 0, 0, 0.3);
+        padding: 15px 15px;
+        margin-bottom: 20px;
+        width: 400px;
+        max-width: 100%;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+      }
+      .todo-item[data-completed] {
+        opacity: 0.7;
+      }
+      .todo-item[data-completed] .todo-text {
+        text-decoration: line-through;
+      }
+      .todo-text {
+        margin: 0;
+      }
+      .todo-notes {
+        margin-top: 8px;
+        margin-bottom: 0;
+        color: #777;
+        font-size: 12px;
+      }
+    </style>
+  </template>
+</dom-module>
